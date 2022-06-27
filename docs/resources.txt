@@ -1,0 +1,28 @@
+Strip Token:
+
+ https://explorer.stripchain.blockwell.ai/address/0xB00B1E26e608Dce631db71c556bA1cf378aFFbEb/transactions
+
+example token transfer:
+  https://explorer.stripchain.blockwell.ai/tx/0xac4f9626645e0ba1a01cafd0495346401401894256eb11b317d89ed11f6384da/token-transfers
+  
+Log from it:
+  https://explorer.stripchain.blockwell.ai/tx/0xac4f9626645e0ba1a01cafd0495346401401894256eb11b317d89ed11f6384da/logs
+
+Transaction used for the image transaction_call:
+  https://explorer.stripchain.blockwell.ai/tx/0xa42150dde744a9b2583f2315356a170515056a63edf7886e5ad529c2a5093414/token-transfers
+  
+transfer call
+  Transfer(address indexed from, address indexed to, uint256 value)
+  
+example nmbers to use for strip tokens
+    75000000000000000000000 - 75000
+    3000000000000000000000 
+    500000000000000000000 -- 500
+    30000000000000000000 - 30
+    196097415730000000000000 = 196097.41573
+    196097000000000000000000 = 196097.0
+    19000000000000000000000
+    750000000000000000000000
+    75000000000000000000000 - 75000
+    196097415730000000000000
+    1500000000000000000000  1500
