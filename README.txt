@@ -11,7 +11,9 @@ There are three ways to run this.
 2. The hard way, "I want to see how this works, how to set
    it up and everything." (A.K.A "The developer way").
 
-3. I run it for you. I create a new wallet, you send the strip,
+3. I run it for you. 
+
+   I create a new wallet, you send the strip,
    I run it, we can do a live screen share if you want to watch
    me go through it to learn. I'll be recording it either way.
    After it's done I can send back any $STRIP to you. It's all
@@ -34,17 +36,18 @@ need a bash shell, cygwin will probably work. I can't test that, though.
 
 To get a copy of this run the following command:
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!! Developers: !!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!! Developers: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 - Install git 
 - get repo:
   - $ git clone https://github.com/fmerenda/StripperVilleUtils
 - Follow the README.txt
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!  Users:  !!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!  Users:  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 - Install Virtualbox (free) from: 
   - https://www.virtualbox.org/wiki/Downloads
@@ -59,8 +62,6 @@ To get a copy of this run the following command:
 ** Developer setup installing locally starts here ***********************
 *************************************************************************
 *************************************************************************
-
-SETUP:
 
 Install some bash shell. cygwin? Is that still a thing?
 
@@ -78,6 +79,7 @@ Install npm modules:
  Clone the StripperVilleUtils repository:
 
    - Open a terminal, and make a directory for the project:
+
       - mkdir -p $HOME/projects/stripperville
       - $cd !$
       $ git clone https://github.com/fmerenda/StripperVilleUtils
@@ -98,22 +100,31 @@ Skip down to the "CONFIGURE YOUR RUN STARTS HERE" section.
 
 - There are two shortcuts on the desktop
 
-  - The terminal. It opens up, cd's into the correct
+  - The terminal. 
+
+    It opens up, cd's into the correct
     directory, and asks you if you want to update the
     files in the project. ***Answer yes if this is your  
     first time.*** After that it's up for discussion.
     
-- The text editor, GEdit. If you open it up, and go to
-  tools (in the hamburger menu), there's an option to 
-  restore the StripperVille session. 
-  If you do that then the files you'll need to edit
-  should all be there already opened for you.
-  
-- If you want to update the source code manually, you
-  can get in the terminal and just type:
-    $ runS<tab><enter>
-  and it will run a script I made to update the local
-  copy of the repository.
+- The text editor
+
+  GEdit:
+
+    If you open it up, and go to
+    tools (in the hamburger menu), there's an option to 
+    restore the StripperVille session. 
+    If you do that then the files you'll need to edit
+    should all be there already opened for you.
+    
+- If you want to update the source code manually
+
+    open the terminal and just type:
+
+       $ runS<tab><enter>
+      
+    and it will run a script I made to update the local
+    copy of the repository.
   
   *Note* this might override any changes you've made.
   Talk to me if you are unsure what to do, want to start
@@ -127,11 +138,11 @@ Skip down to the "CONFIGURE YOUR RUN STARTS HERE" section.
 ********************************************************************
 ********************************************************************
 
-# Copy the DOT.env to .env and put in the private key
-# of the account you are transferring FROM. This file 
-# will not get checked in.
+  Copy the DOT.env to .env and put in the private key
+  of the account you are transferring FROM. This file 
+  will not get checked in.
 
-  $ cp DOT.env .env
+    $ cp DOT.env .env
 
   Open .eng in gedit by typing the following, because it's a "hidden" file:
   
@@ -139,7 +150,7 @@ Skip down to the "CONFIGURE YOUR RUN STARTS HERE" section.
     
   Edit and put your private key in from the SENDER's account.
 
-# Test your install:
+  # Test your install:
 
   - Run the quick tests to make sure the basics are working OK
   
@@ -166,13 +177,15 @@ Skip down to the "CONFIGURE YOUR RUN STARTS HERE" section.
 You shouldn't get any errors. If you get errors you'll know from the 1,000
 "!!!!!" that I put in the errors.
 
-# You can't run runAllTests() because it will try to send 1 $STRIP from 
-# Miami to Frank's account, and it will fail because you (hopefully) 
-# don't have my private keys for the miami club!
+You can't run runAllTests() because it will try to send 1 $STRIP from 
+Miami to Frank's account, and it will fail because you (hopefully) 
+don't have my private keys for the miami club!
 
 If everything looks good so far:
 
- -Prep to run the distributeStrip:
+ ******************************************
+ **** Prep to run the distributeStrip: ****
+ ******************************************
 
     - put the numbers of your strippers in the file RawStripperNumbers.txt
       in the main directory of this project. 
@@ -184,21 +197,23 @@ If everything looks good so far:
 321
 etc....
 
- - Pre-process the numbers of your strippers before you put them in the app:
+ * Pre-process the numbers of your strippers before you put them in the app:
  
    $ chmod +x ./formatInputListOfNumbers.sh && ./formatInputListOfNumbers.sh
 
       - The script will remove any whitespace, and empty lines, and leaves a comma off the last number.
  
- - Put your strippers into the source code:
+ * Put your strippers into the source code:
 
-    Open the StripperIds.js file, and 
+    Open the StripperIds.js file, 
+
     - gedit src/strippervillemiami/utils/StripperUtil.js, and paste that text at the top, 
       ** on the lines between the '[' and the '];'. ***
 
-  - Now set the amount and the sender's address.
+  * Now set the amount and the sender's address.
 
     - Open the StripperUtils.js file:
+
           - gedit src/strippervillemiami/utils/StripperUtil.js
           - at the top after the intitial comments you'll see two lines:
 
@@ -213,13 +228,17 @@ etc....
 
 Save it.
 
-Last thing: if you want to see debugging messages as it runs, edit
-the file src/strippervillemiami/utils/LogUtils, and change this line
-    var DEBUG = false;
-to this
-    var DEBUG = true;
+Last thing: 
 
-Run the program:
+* if you want to see debugging messages as it runs, edit
+  the file src/strippervillemiami/utils/LogUtils, and change this line
+      var DEBUG = false;
+  to this
+      var DEBUG = true;
+
+************************************
+********* Run the program: *********
+************************************
 
 - From the terminal, in the base directory of the project, run the program:
 
