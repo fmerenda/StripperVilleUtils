@@ -3,6 +3,5 @@
 /package-lock.json
 /package.json
 .env
-.jshinitrc
-.jshintrc
 StripperVilleUtils-javascript.code-workspace
+.*
