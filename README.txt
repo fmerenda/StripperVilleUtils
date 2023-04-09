@@ -21,12 +21,6 @@ There are three ways to run this.
    goes wrong (network goes out, etc) I can fix it right then.
    I'm happy to offer this to everyone. FERDA! :)
 
-4. There's an option 4. PINEAPPLE. See option 3.
-
-The USERS way is a virtual machine, already set up and ready to go, with some
-convenience things thrown in like the text editor has a session with the files opened already that
-are needed to change for congfiguration, an update script, etc. It's a full copy of Debian
-set up and ready to run already.
 
 The hard way, "I want to see how this works and hack on it for a bit."
 There's full instructions to install everything on a local linux workstation,
@@ -45,17 +39,6 @@ To get a copy of this run the following command:
   - $ git clone https://github.com/fmerenda/StripperVilleUtils
 - Follow the README.txt
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!  Users:  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-- Install Virtualbox (free) from: 
-  - https://www.virtualbox.org/wiki/Downloads
-    (VMWare will work also)
-
-- Download the vm from (**3.3gb download!!):
-  - https://3dotdot2dot.one/strippervillemiami/
-  - Follow the README.txt
 
 *************************************************************************
 *************************************************************************
@@ -85,58 +68,6 @@ Install npm modules:
       $ git clone https://github.com/fmerenda/StripperVilleUtils
       $ cd StripperVilleUtils
 
-Skip down to the "CONFIGURE YOUR RUN STARTS HERE" section.
-
-********************************************************************
-********************************************************************
-*********** RUN VIRTUAL BOX IMAGE OF APP INSTALL BEGINS HERE *******
-********************************************************************
-********************************************************************
-
-- Install virtualbox and download the image, see above.
-
-. After the image boots, your login and password are:
-    osboxes/StripForMe
-
-- There are two shortcuts on the desktop
-
-  - The terminal. 
-
-    It opens up, cd's into the correct
-    directory, and asks you if you want to update the
-    files in the project. ***Answer yes if this is your  
-    first time.*** After that it's up for discussion.
-    
-- The text editor
-
-  GEdit:
-
-    If you open it up, and go to
-    tools (in the hamburger menu), there's an option to 
-    restore the StripperVille session. 
-    If you do that then the files you'll need to edit
-    should all be there already opened for you.
-    
-- If you want to update the source code manually
-
-    open the terminal and just type:
-
-       $ runS<tab><enter>
-      
-    and it will run a script I made to update the local
-    copy of the repository.
-  
-  *Note* this might override any changes you've made.
-  Talk to me if you are unsure what to do, want to start
-  over, etc.
-  
-  Proceed to the next section:
-
-********************************************************************
-********************************************************************
-************ CONFIGURE YOUR RUN STARTS HERE ************************
-********************************************************************
-********************************************************************
 
   Copy the DOT.env to .env and put in the private key
   of the account you are transferring FROM. This file 
@@ -144,7 +75,7 @@ Skip down to the "CONFIGURE YOUR RUN STARTS HERE" section.
 
     $ cp DOT.env .env
 
-  Open .eng in gedit by typing the following, because it's a "hidden" file:
+  Open .env in gedit by typing the following, because it's a "hidden" file:
   
     $ gedit .env & 
     
